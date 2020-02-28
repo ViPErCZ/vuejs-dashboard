@@ -16,7 +16,7 @@
 
             </div><!-- /.card-top -->
             <div class="card-body p-0 pt-4 pb-4 download-chart">
-                <DownloadChart :value="value"/>
+                <DownloadChart :value="value" :id="id"/>
             </div>
 
         </div>
@@ -39,6 +39,10 @@
                 type: Number,
                 required: true,
                 default: 0
+            },
+            id: {
+                type: String,
+                required: true
             }
         }
     }

@@ -90,14 +90,6 @@
                     }
                 }
             });
-
-            // function update_plot5() {
-            //     plot5.setData([formatting(that.data)]);
-            //     plot5.draw();
-            //     setTimeout(update_plot5, updateInterval);
-            // }
-            //
-            // update_plot5();
         }
     }
 </script>
