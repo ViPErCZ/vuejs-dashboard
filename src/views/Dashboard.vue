@@ -2,7 +2,7 @@
 
     <div>
         <div class="row">
-            <Revenue title="CPU load" :value="cpu" />
+            <Revenue title="CPU usage" :value="cpu" />
             <Memory title="Memory usage" :value="mem" id="memory" />
             <Disk title="Disk usage" :value="disksize" id="disksize" />
         </div>
@@ -37,10 +37,10 @@ export default {
     },
     sockets: {
         messageCPU(data) {
-            this.cpu = data.avg;
+            this.cpu = data.currentload;
         },
         messageMemory(data) {
-            this.mem = (data.used / data.total) * 100;
+            this.mem = (data.active / data.total) * 100;
         },
         messageNetwork(data) {
             // console.log(data);

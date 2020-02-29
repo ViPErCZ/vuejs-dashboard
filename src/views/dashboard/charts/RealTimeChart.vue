@@ -82,7 +82,7 @@
                 },
                 yaxis: {
                     min: 0,
-                    max: 1000,
+                    max: 10,
                     color: '#eee',
                     font: {
                         size: 10,

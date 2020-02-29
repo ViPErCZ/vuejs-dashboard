@@ -55,9 +55,8 @@
                         },
                         limitMax: true,
                         limitMin: true,
-                        colorStart: "#6FADCF",
-                        colorStop: "#8FC0DA",
-                        strokeColor: "#E0E0E0",
+                        percentColors: [[0.0, "#186f03"], [0.50, "#9c9c00"], [1.0, "#8b0000"]],
+                        strokeColor: '#e6e9ec',
                         generateGradient: true,
                         highDpiSupport: true
                     };

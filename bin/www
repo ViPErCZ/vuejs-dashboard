@@ -36,7 +36,7 @@ io.on('connection', function (socket) {
 
 function cpu() {
   setTimeout(function () {
-    si.cpuCurrentspeed()
+    si.currentLoad()
         .then(data => {
           io.emit('messageCPU', data);
           cpu();

@@ -27,7 +27,7 @@
 
             <div class="card-footer br-0 pb-4 mb-2 bg-white">
                 <h6 class="mb-0 float-left">
-                    <span class="count" v-text="value"></span>
+                    <span class="count" v-text="percent"></span>
                 </h6>
                 <h6 class="mb-0 fw-r float-right">
 <!--                    <i class="fa fa-arrow-circle-down color-red"></i>-->
@@ -59,11 +59,22 @@
                 default: 0
             }
         },
+        computed: {
+            percent: function () {
+                return this.value.toFixed(2) + '%';
+            }
+        },
         watch: {
             value: function(newVal) {
-                this.value = Number(newVal);
+                this.value = newVal;
             }
         },
     }
 
 </script>
+
+<style scoped>
+    .g2 {
+       text-align: center;
+    }
+</style>
