@@ -1,5 +1,4 @@
 <template>
-
     <div>
         <div class="row">
             <Revenue title="CPU usage" :value="cpu" />
@@ -10,7 +9,6 @@
             <RealTime title="Network (received kbytes / second)" :value="rx_sec" :has-percentage="true" />
         </div>
     </div>
-
 </template>
 
 <script>

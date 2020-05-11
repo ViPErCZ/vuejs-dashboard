@@ -1,18 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import socketio from 'socket.io-client';// import socketio from 'socket.io';
-import VueSocketIO from 'vue-socket.io';
+import io from 'socket.io-client';
+import VueSocketIOExt from 'vue-socket.io-extended';
 
-const SocketInstance = socketio.connect('http://localhost:3000', {
-    query: {
-        token: window.localStorage.getItem('auth')
-    }
-});
-
-Vue.use(new VueSocketIO({
-    debug: false,
-    connection: SocketInstance
-}));
+const socket = io('http://localhost:3000');
+Vue.use(VueSocketIOExt, socket);
 
 new Vue({
     el: '#app',
