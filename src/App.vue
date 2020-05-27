@@ -42,8 +42,9 @@
         </nav>
       </aside>
       <div id="right-panel" class="right-panel">
+        <Header :currentNotification="currentNotification" />
         <div class="content">
-          <Dashboard/>
+          <Dashboard v-on:notification="notification"/>
         </div>
       </div>
     </div>
@@ -52,10 +53,22 @@
 
 <script>
   import Dashboard from './views/Dashboard'
+  import Header from './views/Header'
 
   export default {
     components: {
-      Dashboard
+      Dashboard,
+      Header
+    },
+    data() {
+      return {
+        currentNotification: 0
+      }
+    },
+    methods: {
+      notification (value) {
+        this.currentNotification = value;
+      }
     },
     computed: {}
   };

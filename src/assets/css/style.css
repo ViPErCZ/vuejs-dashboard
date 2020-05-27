@@ -602,5 +602,7 @@ header .form-inline {
 .message-show + .dropdown-menu,
 .language-show + .dropdown-menu {
   display: block; }
-
+.hide {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

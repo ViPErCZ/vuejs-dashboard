@@ -36,6 +36,7 @@ export default {
     sockets: {
         messageCPU(data) {
             this.cpu = data.currentload;
+            this.$emit('notification', this.cpu);
         },
         messageMemory(data) {
             this.mem = (data.active / data.total) * 100;
