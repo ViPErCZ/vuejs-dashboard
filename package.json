@@ -23,10 +23,10 @@
     "pug": "^2.0.4",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0",
-    "systeminformation": "^4.26.9",
+    "systeminformation": "^4.26.10",
     "vgauge": "^1.2.11",
     "vue": "^2.6.10",
-    "vue-socket.io-extended": "^4.0.3",
+    "vue-socket.io-extended": "^4.0.4",
     "vuex": "^3.5.1"
   },
   "devDependencies": {
@@ -47,7 +47,7 @@
     "style-loader": "^0.23.1",
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.43.0",
+    "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-node-externals": "^1.7.2"
   }
