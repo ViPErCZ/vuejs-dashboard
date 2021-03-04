@@ -35,7 +35,7 @@ export default {
     },
     sockets: {
         messageCPU(data) {
-            this.cpu = data.currentload;
+            this.cpu = data.currentLoadSystem;
             this.$emit('notification', this.cpu);
         },
         messageMemory(data) {
