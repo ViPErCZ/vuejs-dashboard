@@ -27,7 +27,8 @@
     "vgauge": "^1.2.12",
     "vue": "^2.6.12",
     "vue-socket.io-extended": "^4.1.0",
-    "vuex": "^3.6.2"
+    "vuex": "^3.6.2",
+    "ssri": ">=8.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
