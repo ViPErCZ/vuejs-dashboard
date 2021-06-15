@@ -1,5 +1,5 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
@@ -33,9 +33,6 @@ module.exports = {
           'css-loader'
         ],
       },
-      { test: /vendor\/.+\.(jsx|js)$/,
-        loader: 'imports?jQuery=jquery,$=jquery,this=>window'
-      },
       {
           test: /\.scss$/,
           use: [{
@@ -67,10 +64,13 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          esModule: false,
+        },
+        generator: {
+          filename: 'static/[hash][ext]'
         }
       }
     ]
@@ -90,10 +90,10 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: 'eval-source-map'
 }
 
-module.exports.devtool = '#source-map';
+module.exports.devtool = 'source-map';
 
 if (process.env.NODE_ENV === 'production') {
   // http://vue-loader.vuejs.org/en/workflow/production.html
