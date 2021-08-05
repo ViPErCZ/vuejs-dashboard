@@ -1,11 +1,14 @@
 {
   "name": "skeleton",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "dev": "webpack --env development --mode development --progress",
     "build": "webpack --mode production --progress"
+  },
+  "engines": {
+    "node": "12"
   },
   "dependencies": {
     "animate.css": "^3.7.0",
