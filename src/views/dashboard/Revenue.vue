@@ -3,11 +3,9 @@
         <div class="card revenue">
             <div class="card-top">
                 <h4 class="card-title m-0 float-left">{{ title }}</h4><!-- /.content-title -->
-                <div 
-                    class="action-menu dropdown float-right" 
-                >
+                <div class="action-menu dropdown float-right">
                     <button class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-ellipsis-v"></i>
+                        <font-awesome-icon icon="fa-solid fa-ellipsis-vertical" />
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Edit</a>
@@ -41,11 +39,23 @@
 
 <script>
     import RevenueChart from './charts/RevenueChart.vue';
+    /* import the fontawesome core */
+    import { library } from '@fortawesome/fontawesome-svg-core'
+
+    /* import font awesome icon component */
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+    /* import specific icons */
+    import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons'
+
+    /* add icons to the library */
+    library.add(faEllipsisVertical)
 
     export default {
         name: "Revenue",
         components:{
-            RevenueChart
+            RevenueChart,
+            FontAwesomeIcon
         },
         props: {
             title: {
@@ -63,12 +73,7 @@
             percent: function () {
                 return this.value.toFixed(2) + '%';
             }
-        },
-        watch: {
-            value: function(newVal) {
-                this.value = newVal;
-            }
-        },
+        }
     }
 
 </script>

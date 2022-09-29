@@ -1,13 +1,12 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
+
 import App from './App.vue'
-import io from 'socket.io-client';
-import VueSocketIOExt from 'vue-socket.io-extended';
+import io from 'socket.io-client'
+import VueSocketIOExt from 'vue-socket.io-extended'
 
-const socket = io('http://localhost:3000');
-Vue.use(VueSocketIOExt, socket);
+// const socket = io('http://localhost:3000')
 
-new Vue({
-    el: '#app',
-    render: h => h(App),
-    components: { App }
-});
+const app = createApp(App)
+app.use(VueSocketIOExt, io("ws://localhost:3000"))
+// app.use(VueSocketIOExt, socket)
+app.mount('#app')

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <canvas ref="gauge" :height="height" :width="width"></canvas>
+        <canvas ref="gauge" height="150" width="380"></canvas>
     </div>
 </template>
 
@@ -12,14 +12,6 @@
             unit: {
                 type: String,
                 default: ""
-            },
-            height: {
-                type: String,
-                default: "150px"
-            },
-            width: {
-                type: String,
-                default: "300px"
             },
             decimalPlace: {
                 type: Number,

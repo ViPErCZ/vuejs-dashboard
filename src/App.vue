@@ -14,7 +14,7 @@
               aria-label="Toggle navigation"
               class="navbar-toggler"
             >
-              <i data-v-03d0f88a="" class="fa fa-bars"></i>
+              <font-awesome-icon icon="fa-solid fa-bars" />
             </button>
             <a
               data-v-03d0f88a=""
@@ -27,15 +27,16 @@
               href="#/"
               class="navbar-brand hidden router-link-exact-active open active"
               ><img src="./images/logo2.png" alt="Logo"></a>
-            <a data-v-03d0f88a="" id="menuToggle" class="menutoggle pull-left"
-              ><i class="fa fa fa-tasks"></i
-            ></a>
+            <a data-v-03d0f88a="" id="menuToggle" class="menutoggle pull-left">
+              <font-awesome-icon icon="fa-solid fa-tasks" />
+            </a>
           </div>
           <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
               <li class="nav-item">
-                <a href="#/dashboard" class=""><i class="menu-icon fa fa-dashboard"></i>
-                  <span class="menu-title-text">Dashboard</span></a>
+                <a href="#/dashboard" class="">
+                  <font-awesome-icon icon="fa-solid fa-dashboard" />
+                  <span class="menu-title-text p-2">Dashboard</span></a>
               </li>
             </ul>
           </div>
@@ -54,11 +55,27 @@
 <script>
   import Dashboard from './views/Dashboard'
   import Header from './views/Header'
+  /* import the fontawesome core */
+  import { library } from '@fortawesome/fontawesome-svg-core'
+
+  /* import font awesome icon component */
+  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+  /* import specific icons */
+  import { faBars } from '@fortawesome/free-solid-svg-icons'
+  import { faTasks } from '@fortawesome/free-solid-svg-icons'
+  import { faDashboard } from '@fortawesome/free-solid-svg-icons'
+
+  /* add icons to the library */
+  library.add(faBars)
+  library.add(faTasks)
+  library.add(faDashboard)
 
   export default {
     components: {
       Dashboard,
-      Header
+      Header,
+      FontAwesomeIcon
     },
     data() {
       return {
@@ -75,7 +92,6 @@
 </script>
 
 <style lang="scss">
-@import url("./assets/css/font-awesome.min.css");
 @import url("./assets/css/themify-icons.css");
 @import url("./assets/css/pe-icon-7-filled.css");
 @import url("./assets/css/flag-icon.min.css");

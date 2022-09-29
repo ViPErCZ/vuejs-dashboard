@@ -27,7 +27,7 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
           'vue-style-loader',
           'css-loader'
@@ -36,7 +36,7 @@ module.exports = {
       {
           test: /\.scss$/,
           use: [{
-            loader: "style-loader" // creates style nodes from JS strings
+            loader: "vue-style-loader" // creates style nodes from JS strings
           }, {
             loader: "css-loader", // translates CSS into CommonJS
             options:{
@@ -59,25 +59,20 @@ module.exports = {
         ],
       },
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
         loader: 'file-loader',
         options: {
           esModule: false,
         },
         generator: {
-          filename: 'static/[hash][ext]'
+          filename: 'static/[hash].[ext]'
         }
       }
     ]
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      // 'vue$': 'vue/dist/vue.esm.js',
       'jquery': 'jquery/src/jquery.js'
     },
     extensions: ['*', '.js', '.vue', '.json']

@@ -5,7 +5,7 @@
                 <h4 class="card-title m-0 float-left">{{ title }}</h4><!-- /.content-title -->
                 <div class="action-menu dropdown float-right">
                     <button class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-ellipsis-v"></i>
+                        <font-awesome-icon icon="fa-solid fa-ellipsis-vertical" />
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Edit</a>
@@ -25,9 +25,21 @@
 
 <script>
     import DownloadChart from './charts/DownloadChart.vue';
+    /* import the fontawesome core */
+    import { library } from '@fortawesome/fontawesome-svg-core'
+
+    /* import font awesome icon component */
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+    /* import specific icons */
+    import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons'
+
+    /* add icons to the library */
+    library.add(faEllipsisVertical)
     export default{
         components:{
-            DownloadChart
+            DownloadChart,
+            FontAwesomeIcon
         },
         props: {
             title: {

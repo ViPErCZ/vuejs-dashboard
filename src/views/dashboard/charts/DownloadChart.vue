@@ -1,6 +1,6 @@
 <template>
   <div class="chart-download">
-    <canvas ref="gauge" width="160px" height="160px" v-bind:id="id" class="download-chart"></canvas>
+    <canvas ref="gauge" width="160" height="160" v-bind:id="id" class="download-chart"></canvas>
     <span v-bind:id="valueId" class="gauge-value">{{ percentage }} %</span>
   </div>
 </template>

@@ -1,5 +1,8 @@
+<template>
+  <div :id='canvasId' style='height: 400px'></div>
+</template>
+
 <script>
-    import Vue from 'vue';
     import jquery from 'jquery'
 
     import '../../../assets/js/lib/flot-chart/jquery.flot.js';
@@ -9,12 +12,6 @@
 
     export default {
         name: 'dashboard-realtime-chart',
-        props: {
-            value: {
-                type: Number,
-                default: 50
-            }
-        },
         watch: {
             value: function (newVal) {
                 if (this.data.length > 48) {
@@ -44,7 +41,9 @@
                 plot: ''
             }
         },
-        template: "<div :id='canvasId' style='height: 400px'></div>",
+        props: {
+          "value": 0
+        },
         mounted() {
             function formatting(data) {
                 var res = [];
@@ -58,7 +57,7 @@
                 this.data.push(0);
             }
 
-            this.plot = jQuery.plot('#flotRealtime2', [formatting(this.data)], {
+            this.plot = jQuery.plot('#' + this.canvasId, [formatting(this.data)], {
                 colors: ['#5c6bc0'],
 
                 series: {

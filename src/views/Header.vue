@@ -9,7 +9,7 @@
                                 class="search-trigger"
                                 @click="searchClick"
                         >
-                            <i class="fa fa-search"></i>
+                            <font-awesome-icon icon="fa-solid fa-search" />
                         </button>
 
                         <div class="form-inline">
@@ -19,7 +19,7 @@
                                         class="search-close"
                                         type="button"
                                         @click="isSearch = !isSearch"
-                                ><i class="fa fa-close"></i></button>
+                                ><font-awesome-icon icon="fa-solid fa-close" /></button>
                             </form>
                         </div>
 
@@ -34,7 +34,7 @@
                                     @click="handleNotification"
                                     autoClose=true
                             >
-                                <i class="fa fa-bell"></i>
+                                <font-awesome-icon icon="fa-solid fa-bell" />
                                 <span class="count bg-danger" :class="{'': counterNotification > 0, 'hide': counterNotification === 0 }">{{ counterNotification }}</span>
                             </button>
                         </div>
@@ -48,8 +48,26 @@
 
 
 <script>
+    /* import the fontawesome core */
+    import { library } from '@fortawesome/fontawesome-svg-core'
+
+    /* import font awesome icon component */
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+    /* import specific icons */
+    import { faSearch } from '@fortawesome/free-solid-svg-icons'
+    import { faClose } from '@fortawesome/free-solid-svg-icons'
+    import { faBell } from '@fortawesome/free-solid-svg-icons'
+
+    /* add icons to the library */
+    library.add(faSearch)
+    library.add(faClose)
+    library.add(faBell)
     export default {
         name: 'Header',
+        components: {
+            FontAwesomeIcon
+        },
         props: {
             currentNotification: {
                 type: Number,
