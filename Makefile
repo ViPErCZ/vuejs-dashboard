@@ -10,12 +10,17 @@ start: _build
 build: _build
 _build:
 	@echo "${BLUE}>>> Building image phpcli_platform_converter${EOL}"
-	@docker build --force-rm -t nodejs_dashboard_skeleton .
+	@docker build --network=host --force-rm -t nodejs_dashboard_skeleton .
 
 npm_install: _npm_install
 _npm_install:
 	@echo "${BLUE}>>> Running npm install...${EOL}"
-	@docker run -it --rm -p 3000:3000 -v ${current_dir}:/skeleton -w /skeleton --name nodejs_dashboard_skeleton nodejs_dashboard_skeleton /bin/bash -c "npm install && npm rebuild node-sass"
+	@docker run -it --rm --network=host -v ${current_dir}:/skeleton -w /skeleton --name nodejs_dashboard_skeleton nodejs_dashboard_skeleton /bin/bash -c "npm install && npm rebuild node-sass"
+
+npm_update: _npm_update
+_npm_update:
+	@echo "${BLUE}>>> Running npm update...${EOL}"
+	@docker run -it --rm --network=host -v ${current_dir}:/skeleton -w /skeleton --name nodejs_dashboard_skeleton nodejs_dashboard_skeleton /bin/bash -c "npm update && npm rebuild node-sass"
 
 run_dev: _run_dev
 _run_dev:
