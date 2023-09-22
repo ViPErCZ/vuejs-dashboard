@@ -22,6 +22,11 @@ _npm_update:
 	@echo "${BLUE}>>> Running npm update...${EOL}"
 	@docker run -it --rm --network=host -v ${current_dir}:/skeleton -w /skeleton --name nodejs_dashboard_skeleton nodejs_dashboard_skeleton /bin/bash -c "npm update && npm rebuild node-sass"
 
+fix_force_audit: _fix_force_audit
+_fix_force_audit:
+	@echo "${BLUE}>>> Running fix force audit...${EOL}"
+	@docker run -it --rm --network=host -v ${current_dir}:/skeleton -w /skeleton --name nodejs_dashboard_skeleton nodejs_dashboard_skeleton /bin/bash -c "npm audit fix --force && npm rebuild node-sass"
+
 run_dev: _run_dev
 _run_dev:
 	@echo "${BLUE}>>> Running...${EOL}"

@@ -1,4 +1,4 @@
-FROM node:16 as skeleton
+FROM node:20 as skeleton
 ARG TIMEZONE
 
 RUN apt-get update && apt-get install -y tzdata
@@ -10,6 +10,6 @@ RUN ln -snf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && echo ${TIMEZONE} >
 RUN "date"
 
 # update npm
-RUN npm install -g npm@8.19.2
+RUN npm install -g npm@10.1.0
 
 WORKDIR /skeleton
