@@ -34,7 +34,7 @@
         "pug": "^3.0.3",
         "socket.io": "^4.8.1",
         "socket.io-client": "^4.7.2",
-        "systeminformation": "^5.27.14",
+        "systeminformation": "^5.30.8",
         "vue": "^3.5.13",
         "vue-socket.io-extended": "^5.0.0-alpha.5",
         "vuex": "^4.0.2"
